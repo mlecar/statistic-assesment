@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,7 +36,7 @@ public class GlobalExceptionHandler {
     }
 
     @ResponseBody
-    @ExceptionHandler({ BindException.class, IllegalArgumentException.class })
+    @ExceptionHandler({ BindException.class, IllegalArgumentException.class, HttpRequestMethodNotSupportedException.class })
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Object badRequest(HttpServletRequest request, Exception e) throws IOException {
         HttpHeaders headers = new HttpHeaders();
@@ -50,7 +51,7 @@ public class GlobalExceptionHandler {
         Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
         StringBuilder sb = new StringBuilder();
         for (ConstraintViolation<?> violation : violations) {
-            sb.append(violation.getMessage() + "\n");
+            sb.append(violation.getPropertyPath() + " " + violation.getMessage() + "\n");
         }
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.TEXT_PLAIN);
