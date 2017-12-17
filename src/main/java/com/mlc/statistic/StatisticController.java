@@ -1,7 +1,5 @@
 package com.mlc.statistic;
 
-import java.util.DoubleSummaryStatistics;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,7 +14,7 @@ public class StatisticController {
 
     @ResponseBody
     @RequestMapping(value = { "/statistics/", "/statistics" }, method = RequestMethod.GET, produces = { "application/json" })
-    public DoubleSummaryStatistics statistics() {
+    public DoubleSummaryStatisticsWrapper statistics() {
 
         return statistics.getLastMinute();
     }

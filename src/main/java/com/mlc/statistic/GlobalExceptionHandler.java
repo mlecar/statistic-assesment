@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
+import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -36,7 +37,7 @@ public class GlobalExceptionHandler {
     }
 
     @ResponseBody
-    @ExceptionHandler({ BindException.class, IllegalArgumentException.class, HttpRequestMethodNotSupportedException.class })
+    @ExceptionHandler({ BindException.class, IllegalArgumentException.class, HttpRequestMethodNotSupportedException.class, HttpMediaTypeNotSupportedException.class })
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Object badRequest(HttpServletRequest request, Exception e) throws IOException {
         HttpHeaders headers = new HttpHeaders();
