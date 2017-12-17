@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.3 r1808647">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Plano de Teste" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="Variáveis Definidas Pelo Usuário" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="server.ip" elementType="Argument">
+            <stringProp name="Argument.name">server.ip</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="server.port" elementType="Argument">
+            <stringProp name="Argument.name">server.port</stringProp>
+            <stringProp name="Argument.value">8080</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="cryptedpan4k_1" elementType="Argument">
+            <stringProp name="Argument.name">cryptedpan4k_1</stringProp>
+            <stringProp name="Argument.value">19FC83AFAB00656593C47E98A5298692E00D73A0FE463D4ECAA29754F26375ECB6A18A6CD233667AF8E9F92FEEF5DFB39F30033E1E3E6892516A36FD42499B7159CB8BF312EC53A595ED7B9F64AECADE4C848AAEF11C29B9BA048CB95E7565F9323D716B46043084CFFE63ABA89F6641251EF5B9D2A219B1A4A081AA5C4D16B89EC6232DBB1DDC08493F1045DEC2BD3618A61139F091D60F7C79621318140F7832FF4E9603F54ECED4DF79B46A2FCE948185DA5A1966736ADD18376D21D0B00D03FDD2E6472F0E26A14D4E2BB87F15CA8EB98F99C2741963759F745FD13D6F0716E702668EF9CA864621A4BA6146DB7AF4E739C474654CA512D4DCB07EED65DE9C40FFF8637331F49ED8F76194AFB2FC28279067180666DE934D7CD197CD1FC99397EDE3665AED291A8A027409C2B4D1F9E5C45F0D1730D82C4F45D197BF4D018CD4002BA390762B04AD628DD4028947A8E126930A9E0EFE0FADD035EDB59F202A2BC980B6B31623041B344D39DABDF2EF28DB65A36B33C5BC5ABE1A2652447A31C3EFE65C81C8637F3BD605D29418A21051A678D395AAFDC91B5E026E869523768FD82FF83F3919A0D8448DDA8DC7C097386F40E6B67068D05C7095B59197628FBDD06F09C306F0EE75228FCB016F872827D2FDF195AAB32AF33494E419458EFFB93035E377A1712AB1DB3E1709BDDB984ED1F7C0FB48B7A44B84D2C67B0F19</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="response4k_1" elementType="Argument">
+            <stringProp name="Argument.name">response4k_1</stringProp>
+            <stringProp name="Argument.value">636F727465736C6172616E6A6569726F</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="cryptedpan4k_2" elementType="Argument">
+            <stringProp name="Argument.name">cryptedpan4k_2</stringProp>
+            <stringProp name="Argument.value">8AD401EC590F4DD0AB3516D28F3DB18606281CBBD44CFAB344F70292413ACC861F1D186F1E3BDBB48AA87ADEC435B019DD500A5862A7FA858181A5605D9966604D94726A07FD15CED028211B6BBDD79380FEA38125955DAE126519A59C1648414488F75D426F3D996E410F369A41100BCEB658255297AF952ED533A06E33507B45D9C60CFB6F3674273A4B1AB7D7FF86245863B7AF9B451BCA9913D7F6B3B65BAE666945F332B58FAEBEBA6BA9C43B9E84B71004B587C63A076FAD0632E6B85CB3BC4B4B48032667230A8F2DAFB78124B7FF590C5F045302DFAE434F88A7428F0AB29B6B904B632C6E28877201E5D21E0B967C3969B5B1597C2D77E5D34C758D422A5B31D08FB1760334A3A317DEF9965739C58DE0B43A2763CA822BC0D0522DDE52021B330BADCB809E0B9CEC1FE8E38500E9322FD097001CFEF8ADEE4463EF22D0D6BC2B08A5736BE08830A18B2D32908A5C61841A9040CAFB70FBA878FEE38ACD86983D171750E751824E6CE7EF947028F818A9212A9A5CA3483E5E9980FFCD9D8C3666F506C7AC924325342ACE75637A0CB62748F808D09DDE8411C74F7815EF448732D37A50024DFFEE202358B5EDFC261A5FCC7DDA6A836080F31A808A039B42F31B42F14EFD0DB311A6D5C4EB1117EC2446287FF9B67D84E1286883715EC126083A6EF78C58F0DC006E6E686A58572441DE7D7254869E7648BF2F6B6A</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="response4k_2" elementType="Argument">
+            <stringProp name="Argument.name">response4k_2</stringProp>
+            <stringProp name="Argument.value">636F727465736D6F6368696C6569726F</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Server Request" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Controlador de Iteração" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">5</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <longProp name="ThreadGroup.start_time">1483012846000</longProp>
+        <longProp name="ThreadGroup.end_time">1483012846000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Gerenciador de Cabeçalhos HTTP" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="transactions" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;amount&quot;:${amount},&#xd;
+	&quot;timestamp&quot;:${timestamp}&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server.ip}</stringProp>
+          <stringProp name="HTTPSampler.port">${server.port}</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/transactions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.proxyPass">6B0573CE-0A94-48F5-96C3-406561273590</stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Pré-Processador BeanShell" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">amount timestamp</stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.time.Instant;
+
+vars.put(&quot;timestamp&quot;, Instant.now().toEpochMilli().toString());
+vars.put(&quot;amount&quot;, &quot;6.89&quot;.toString());</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expressão Regular" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">unescaped</stringProp>
+            <stringProp name="RegexExtractor.refname">responseBody</stringProp>
+            <stringProp name="RegexExtractor.regex">.*</stringProp>
+            <stringProp name="RegexExtractor.template"></stringProp>
+            <stringProp name="RegexExtractor.default">teste</stringProp>
+            <stringProp name="RegexExtractor.match_number"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable"></stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Pós-Processador BeanShell" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">String usedPan = vars.get(&quot;pan&quot;);
+String response = new String(data);
+
+//log.info(&quot;Pan usado: &quot; + usedPan);
+//log.info(&quot;Resposta esperada: &quot; + vars.get(&quot;response4k_&quot; + usedPan));
+//log.info(response);
+
+boolean found =response.contains(vars.get(&quot;response4k_&quot; + usedPan));
+//log.info(&quot;Found - &quot; + found);
+
+if (!found)
+{
+   prev.setSuccessful(false);
+   String errormsg = &quot;\&quot;Example Domain\&quot; string isn&apos;t present in response&quot;;
+   prev.setResponseMessage(errormsg);
+   log.error(errormsg);
+   prev.setStopTestNow(true);
+}else{
+   prev.setResponseMessage(&quot;request executado com sucesso&quot;);
+}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="statistics" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variáveis Definidas Pelo Usuário" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server.ip}</stringProp>
+          <stringProp name="HTTPSampler.port">${server.port}</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/statistics</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.proxyPass">6B0573CE-0A94-48F5-96C3-406561273590</stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Pré-Processador BeanShell" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script"></stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor de Expressão Regular" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">unescaped</stringProp>
+            <stringProp name="RegexExtractor.refname">responseBody</stringProp>
+            <stringProp name="RegexExtractor.regex">.*</stringProp>
+            <stringProp name="RegexExtractor.template"></stringProp>
+            <stringProp name="RegexExtractor.default">teste</stringProp>
+            <stringProp name="RegexExtractor.match_number"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable"></stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Pós-Processador BeanShell" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">String usedPan = vars.get(&quot;pan&quot;);
+String response = new String(data);
+
+//log.info(&quot;Pan usado: &quot; + usedPan);
+//log.info(&quot;Resposta esperada: &quot; + vars.get(&quot;response4k_&quot; + usedPan));
+//log.info(response);
+
+boolean found =response.contains(vars.get(&quot;response4k_&quot; + usedPan));
+//log.info(&quot;Found - &quot; + found);
+
+if (!found)
+{
+   prev.setSuccessful(false);
+   String errormsg = &quot;\&quot;Example Domain\&quot; string isn&apos;t present in response&quot;;
+   prev.setResponseMessage(errormsg);
+   log.error(errormsg);
+   prev.setStopTestNow(true);
+}else{
+   prev.setResponseMessage(&quot;request executado com sucesso&quot;);
+}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Ver Árvore de Resultados" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>
