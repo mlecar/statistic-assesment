@@ -1,5 +1,7 @@
 package com.mlc.statistic;
 
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.doThrow;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -57,9 +59,42 @@ public class TransactionControllerIntegrationTest {
     public void lastCenturyTimestamp() throws Exception {
         Map<String, Object> params = new HashMap<>();
         params.put("amount", 15.8);
-        System.out.println(Instant.ofEpochMilli(LocalDateTime.now().minusYears(30).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()));
         params.put("timestamp", LocalDateTime.now().minusYears(5).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
         this.mockMvc.perform(post(baseContext).contentType(MediaType.APPLICATION_JSON).content(new Gson().toJson(params))).andExpect(status().isNoContent()).andExpect(content().string(""));
+    }
+
+    @Test
+    public void nullTimestamp() throws Exception {
+        Map<String, Object> params = new HashMap<>();
+        params.put("amount", 15.8);
+        this.mockMvc.perform(post(baseContext).contentType(MediaType.APPLICATION_JSON).content(new Gson().toJson(params))).andExpect(status().isBadRequest());
+    }
+
+    @Test
+    public void nullAmount() throws Exception {
+        Map<String, Object> params = new HashMap<>();
+        params.put("timestamp", LocalDateTime.now().minusYears(5).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+        this.mockMvc.perform(post(baseContext).contentType(MediaType.APPLICATION_JSON).content(new Gson().toJson(params))).andExpect(status().isBadRequest());
+    }
+
+    @Test
+    public void emptyBody() throws Exception {
+        Map<String, Object> params = new HashMap<>();
+        this.mockMvc.perform(post(baseContext).contentType(MediaType.APPLICATION_JSON).content(new Gson().toJson(params))).andExpect(status().isBadRequest());
+    }
+
+    @Test
+    public void nullBody() throws Exception {
+        this.mockMvc.perform(post(baseContext).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest());
+    }
+
+    @Test
+    public void internalServerError() throws Exception {
+        doThrow(new RuntimeException("Any exception")).when(manager).add(any(), any());
+        Map<String, Object> params = new HashMap<>();
+        params.put("amount", 15.8);
+        params.put("timestamp", Instant.now().toEpochMilli());
+        this.mockMvc.perform(post(baseContext).contentType(MediaType.APPLICATION_JSON).content(new Gson().toJson(params))).andExpect(status().isInternalServerError());
     }
 
 }

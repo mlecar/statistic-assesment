@@ -1,11 +1,8 @@
 package com.mlc.statistic;
 
 import java.io.IOException;
-import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +10,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindException;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     }
 
     @ResponseBody
-    @ExceptionHandler({ BindException.class, IllegalArgumentException.class, HttpRequestMethodNotSupportedException.class, HttpMediaTypeNotSupportedException.class })
+    @ExceptionHandler({ IllegalArgumentException.class, HttpRequestMethodNotSupportedException.class, HttpMediaTypeNotSupportedException.class, HttpMessageNotReadableException.class })
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Object badRequest(HttpServletRequest request, Exception e) throws IOException {
         HttpHeaders headers = new HttpHeaders();
@@ -46,13 +46,14 @@ public class GlobalExceptionHandler {
     }
 
     @ResponseBody
-    @ExceptionHandler(ConstraintViolationException.class)
+    @ExceptionHandler({ MethodArgumentNotValidException.class })
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Object badRequest(HttpServletRequest request, ConstraintViolationException e) throws IOException {
-        Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+    public Object badRequest(HttpServletRequest request, MethodArgumentNotValidException e) throws IOException {
+        BindingResult bindingResult = e.getBindingResult();
+
         StringBuilder sb = new StringBuilder();
-        for (ConstraintViolation<?> violation : violations) {
-            sb.append(violation.getPropertyPath() + " " + violation.getMessage() + "\n");
+        for (FieldError error : bindingResult.getFieldErrors()) {
+            sb.append(error.getField() + " " + error.getDefaultMessage() + "\n");
         }
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.TEXT_PLAIN);
