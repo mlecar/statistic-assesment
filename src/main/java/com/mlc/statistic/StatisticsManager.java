@@ -36,7 +36,8 @@ public class StatisticsManager {
 
         map.keySet().removeIf(p -> Instant.ofEpochMilli(p).isBefore(lastMinute));
 
-        summaryMap.keySet().removeIf(p -> Instant.ofEpochMilli(p).isBefore(lastMinute));
+        Instant last2Seconds = Instant.now().minus(10, ChronoUnit.SECONDS);
+        summaryMap.keySet().removeIf(p -> Instant.ofEpochMilli(p).isBefore(last2Seconds));
 
         DoubleSummaryStatistics stats = map.entrySet().parallelStream().collect(Collectors.summarizingDouble(Entry::getValue));
         summaryMap.put(Instant.now().toEpochMilli(), new DoubleSummaryStatisticsWrapper(stats));
