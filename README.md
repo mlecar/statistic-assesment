@@ -4,7 +4,7 @@
 
 ## Environment
 	Maven: 
-		Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T14:41:47-02:00)
+		Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-03T16:39:06-03:00)
 	
 	Java: 
 		java version "1.8.0_144"
