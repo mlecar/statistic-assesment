@@ -5,6 +5,8 @@ import static org.junit.Assert.assertThat;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,10 +28,26 @@ public class StatisticsManagerTest {
         Instant now = Instant.now();
         double amount = 10.0;
 
-        manager.add(now.minus(65, ChronoUnit.SECONDS).toEpochMilli(), amount);
-        manager.add(now.minus(61, ChronoUnit.SECONDS).toEpochMilli(), amount);
-        manager.add(now.toEpochMilli(), amount);
-        manager.add(now.plus(1, ChronoUnit.SECONDS).toEpochMilli(), amount);
+        Map<String, Object> stat1 = new HashMap<>();
+        stat1.put("timestamp", now.minus(65, ChronoUnit.SECONDS).toEpochMilli());
+        stat1.put("amount", amount);
+
+        Map<String, Object> stat2 = new HashMap<>();
+        stat2.put("timestamp", now.minus(61, ChronoUnit.SECONDS).toEpochMilli());
+        stat2.put("amount", amount);
+
+        Map<String, Object> stat3 = new HashMap<>();
+        stat3.put("timestamp", now.toEpochMilli());
+        stat3.put("amount", amount);
+
+        Map<String, Object> stat4 = new HashMap<>();
+        stat4.put("timestamp", now.plus(1, ChronoUnit.SECONDS).toEpochMilli());
+        stat4.put("amount", amount);
+
+        manager.add(stat1);
+        manager.add(stat2);
+        manager.add(stat3);
+        manager.add(stat4);
 
         manager.removePastMinutes();
 

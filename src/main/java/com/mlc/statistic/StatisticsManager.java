@@ -3,15 +3,20 @@ package com.mlc.statistic;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.DoubleSummaryStatistics;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
 public class StatisticsManager {
+    private static Logger log = LoggerFactory.getLogger(StatisticsManager.class);
 
     private ConcurrentSkipListMap<Long, Double> map;
 
@@ -22,8 +27,9 @@ public class StatisticsManager {
         summaryMap = new ConcurrentSkipListMap<>();
     }
 
-    public void add(Long timestamp, Double amount) {
-        map.put(timestamp, amount);
+    @JmsListener(destination = "transactions")
+    public void add(Map<String, Object> message) {
+        map.put(Long.valueOf(message.get("timestamp").toString()), Double.valueOf(message.get("amount").toString()));
     }
 
     public DoubleSummaryStatisticsWrapper getLastMinute() {

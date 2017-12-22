@@ -10,6 +10,15 @@ public class Statistic {
     @NotNull
     private Double amount;
 
+    public Statistic() {
+
+    }
+
+    public Statistic(long timestamp, double amount) {
+        this.timestamp = timestamp;
+        this.amount = amount;
+    }
+
     public Long getTimestamp() {
         return timestamp;
     }
